@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Tenis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./src/css/tienda.css">
+</head>
+
+<body>
+    <div class="banner text-center bg-white p-3">
+        <img src="src/assets/image/ci tore.jpeg" alt="Responsive image" class="img-fluid"
+            style="max-height: 150px; object-fit: contain;">
+    </div>
+
+
+    <!-- Menú de navegación -->
+    <div class="menu-lateral">
+        <!-- Logo arriba de los botones -->
+        <div class="logo">
+            <img src="src/assets/image/blazerMID.png" alt="Logo" class="logo-img">
+        </div>
+
+        <!-- Botones del menú -->
+        <div class="btn-group-vertical">
+            <button class="btn btn-primary" onclick="mostrarSeccion('inicio')">Inicio</button>
+            <button class="btn btn-primary" onclick="mostrarFormulario()">Productos</button>
+            <button class="btn btn-primary" onclick="mostrarSeccion('servicios')">Servicios</button>
+            <button class="btn btn-primary" onclick="mostrarSeccion('contacto')">Contacto</button>
+        </div>
+    </div>
+
+    <!-- Sección de Quiénes Somos -->
+    <div id="quienes-somos" class="container my-5 d-none">
+        <div class="row text-center">
+            <div class="col">
+                <h2 class="display-4 mb-4">¿Quiénes Somos?</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-light rounded">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Misión</h3>
+                        <p class="card-text">Somos una tienda especializada en tenis de alta calidad, brindando un
+                            excelente servicio al cliente, con productos innovadores que se adaptan a las necesidades de
+                            todos nuestros clientes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-light rounded">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Visión</h3>
+                        <p class="card-text">Ser la tienda líder en el mercado, ofreciendo una amplia variedad de tenis
+                            para todos los gustos y necesidades, destacando por la calidad y el compromiso con nuestros
+                            clientes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-light rounded">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Valores</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Compromiso</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Innovación</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Calidad</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Atención al Cliente</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Formulario de Productos -->
+    <div id="productos" style="display:none;">
+        <h3 class="text-center">Alta de Productos</h3>
+
+
+        <div class="card-group">
+            <div class="card">
+                <img src="src/assets/image/9bee268dc349c14b6c715407bad14d88.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text">Nike Air Jordan 1 Low x Travis Scott Black Phantom id 23729.</p>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+            <div class="card">
+                <img src="src/assets/image/87cb645b9e01db21955dba7979937293.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text">Jordan 1 Retro High Off-White Chicago id 9561.</p>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+            <div class="card">
+                <img src="src/assets/image/a.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text"> Zapatillas Adidas Originals Campus 00s Core negras Ftwwht White adidas
+                        Originals Forum Low CL id 67124.</p>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <br>
+
+        <div class="card-group">
+            <div class="card">
+                <img src="src/assets/image/f.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text">550 - New Balance id 6381.</p>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+            <div class="card">
+                <img src="src/assets/image/aa.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text">adidas Originals Forum Low CL id 63213.</p>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+            <div class="card">
+                <img src="src/assets/image/ff.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text"> 9060 New Balance ,
+                        id 3888 .</p>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="card-group">
+            <div class="card">
+                <img src="src/assets/image/p.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text">Tenis Pirma Classic Low id 420043.</p>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+            <div class="card">
+                <img src="src/assets/image/pp.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text">PIRMA Tenis Cross Training Climber id 4283.</p>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+            <div class="card">
+                <img src="src/assets/image/dd.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text">Tenis panam depredador azulejo ,id 4534.</p>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+
+
+        <br>
+
+        <br>
+
+
+
+        <form id="formProducto">
+            <div class="mb-3">
+                <label for="txtIDArticulo" class="form-label">ID Artículo</label>
+                <input type="number" class="form-control" name="txtIDArticulo" id="txtIDArticulo" min="1" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="marca" class="form-label">Marca</label>
+                <select class="form-select" id="marca" required>
+                    <option value="" disabled selected>Selecciona la marca</option>
+                    <option value="Nike">Nike</option>
+                    <option value="Adidas">Adidas</option>
+                    <option value="New Balance">New Balance</option>
+                    <option value="Panam">Panam</option>
+                    <option value="Pirma">Pirma</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="txtPrecio" class="form-label">Precio</label>
+                <input type="number" class="form-control" name="txtPrecio" id="txtPrecio" step="0.01" min="0"
+                    placeholder="0.00" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="color" class="form-label">Color</label>
+                <input type="text" class="form-control" id="color" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="talla" class="form-label">Talla</label>
+                <select class="form-select" id="talla" required>
+                    <option value="" disabled selected>Selecciona la talla</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="stock" class="form-label">Cantidad en Stock</label>
+                <input type="range" class="form-range" id="stock" min="1" max="200" value="1"
+                    oninput="stockOutput.value = stock.value" required>
+                <output id="stockOutput">1</output>
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="disponible">
+                <label class="form-check-label" for="disponible">Disponible</label>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tipo de Producto</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="deportivo" name="tipoProducto" value="Deportivo"
+                        required>
+                    <label class="form-check-label" for="deportivo">Deportivo</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="casual" name="tipoProducto" value="Casual"
+                        required>
+                    <label class="form-check-label" for="casual">Casual</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="fechaLanzamiento" class="form-label">Fecha de llegada</label>
+                <input type="date" class="form-control" id="fechaLanzamiento" required>
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-success" id="btnAgregarProducto">Agregar producto</button>
+                <alert Producto agregado correctamente></alert>
+            </div>
+
+            <!-- Tabla de Productos -->
+            <div id="divListaProductos" style="display:none;">
+                <div class="table-responsive">
+                    <table class="table table-striped mt-4" id="tablaProductos">
+                        <thead class="table-dark text-center">
+                            <tr>
+                                <th>ID Artículo</th>
+                                <th>Marca</th>
+                                <th>Precio</th>
+                                <th>Color</th>
+                                <th>Talla</th>
+                                <th>Stock</th>
+                                <th>Disponible</th>
+                                <th>Tipo de Producto</th>
+                                <th>Fecha de Llegada</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyProductos" class="text-center">
+                            <!-- Aquí se agregan dinámicamente las filas con JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Sección de Servicios -->
+    <div class="accordion accordion-flush" id="servicios">
+        <div class="accordion-item">
+            <h2>Servicios</h2>
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <h3>Venta de tenis</h3>
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Se vende los modelos más populares de cada marca, tanto tenis casuales como
+                    deportivos. <br>
+                    <p>Entre las diversas marcas se encuentran:
+                    <ul class="list-unstyled">
+                        <li>Nike</li>
+                        <li>Adidas</li>
+                        <li>New Balance</li>
+                        <li>Puma</li>
+                        <li>Pirma</li>
+                        <li>Panam</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    <h3>Devoluviones</h3>
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Se mantiene un buen trato con los clientes, aceptando devoluciones despues
+                    de 30 dias de la compra del par de tenis, con su comprobante de pago. </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Contacto -->
+    <div id="contacto" class="container py-5" style="display: none;">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">Contacto</h2>
+            <p class="lead">¿Tienes alguna pregunta o necesitas más información? ¡Estamos aquí para ayudarte!</p>
+        </div>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h3 class="card-title mb-4">Síguenos en Redes Sociales</h3>
+                        <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
+                            <a href="https://www.facebook.com" target="_blank" class="text-decoration-none text-dark">
+                                <div class="d-flex flex-column align-items-center">
+                                    <img src="src/assets/image/facebook.png" alt="Facebook" width="50" height="50"
+                                        class="mb-2">
+                                    <small>Facebook</small>
+                                </div>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" class="text-decoration-none text-dark">
+                                <div class="d-flex flex-column align-items-center">
+                                    <img src="src/assets/image/instagram2.png" alt="Instagram" width="50" height="50"
+                                        class="mb-2">
+                                    <small>Instagram</small>
+                                </div>
+                            </a>
+                            <a href="https://www.twitter.com" target="_blank" class="text-decoration-none text-dark">
+                                <div class="d-flex flex-column align-items-center">
+                                    <img src="src/assets/image/x.png" alt="Twitter" width="50" height="50" class="mb-2">
+                                    <small>Twitter</small>
+                                </div>
+                            </a>
+                            <a href="https://www.pinterest.com" target="_blank" class="text-decoration-none text-dark">
+                                <div class="d-flex flex-column align-items-center">
+                                    <img src="src/assets/image/pinterest.png" alt="Pinterest" width="50" height="50"
+                                        class="mb-2">
+                                    <small>Pinterest</small>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="row text-center">
+                            <div class="col-md-6 mb-4">
+                                <h5 class="fw-semibold">Teléfonos</h5>
+                                <p class="mb-1">951 358 66 53</p>
+                                <p>+123 456 789</p>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h5 class="fw-semibold">Email</h5>
+                                <p>tenisTienda@gmail.com</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="src/js/buttons.js"></script>
+    <script src="src/js/script.js"></script>
+    <script src="./src/js/formValidation.js"></script>
+</body>
+
+</html>
