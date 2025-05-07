@@ -1,70 +1,77 @@
-
-
 (function () {
-    // modeo seguro para evitar errores como variables sin declarar
-    'use strict'
+    'use strict';
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    let forms = document.querySelectorAll('.needs-validation')
+    // Credenciales válidas (en un caso real esto vendría de una base de datos)
+    const VALID_EMAIL = "tenisTienda@gmail.com";
+    const VALID_PASSWORD = "tenis";
 
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
-                event.stopPropagation();
+    // Obtener el formulario
+    const loginForm = document.getElementById('loginForm');
+    const errorAlert = document.getElementById('loginError');
 
-                if (!form.checkValidity()) {
-                    form.classList.add('was-validated');
-                    document.getElementById('txtEmail').focus();
-                    return; // No continuar si el formulario no es válido
-                }
-                else {
-                    const user = "tenisTienda@gmail.com";
-                    const pwd = "tenis";
-
-                    // recuperamos los datos del formulario
-                    const email = document.getElementById('txtEmail').value;
-                    const pwdForm = document.getElementById('idPassword').value;
-
-                    if (email === user && pwd === pwdForm) {
-                        event.preventDefault()
-                        sessionStorage.setItem('isLoggedIn', 'true');
-
-                        window.location.href = 'index.html'; // Redirige al index si los datos son correctos
-                    }
-                    else {
-                        let divContend = document.getElementsByClassName('alert alert-danger')[0];
-                        divContend.style.display = 'block';
-                    }
-                }
-            }, false)
-        })
-})()
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    // Verifica si el usuario ya está autenticado para redireccionar a index
-    console.log(sessionStorage.getItem('isLoggedIn'));
-    if (sessionStorage.getItem('isLoggedIn') == 'true') {
-        window.location.href = "Tienda.html"; // Redirige al login si no está autenticado
-
+    // Función para mostrar errores específicos
+    function showError(message) {
+        errorAlert.innerHTML = `<i class="fas fa-exclamation-triangle me-2"></i> ${message}`;
+        errorAlert.classList.remove('d-none');
     }
 
-    // Se crea la instancia del modal
-    let myModal = new bootstrap.Modal(document.getElementById('loginModal'), {
-        backdrop: "static", // Evita que se cierre al hacer clic fuera
-        keyboard: false     // Evita que se cierre con la tecla ESC
+    // Función para limpiar errores
+    function clearErrors() {
+        errorAlert.classList.add('d-none');
+        document.getElementById('txtEmail').classList.remove('is-invalid');
+        document.getElementById('idPassword').classList.remove('is-invalid');
+    }
+
+    // Evento de submit del formulario
+    loginForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Limpiar errores previos
+        clearErrors();
+
+        // Validación básica del formulario
+        if (!loginForm.checkValidity()) {
+            loginForm.classList.add('was-validated');
+            document.getElementById('txtEmail').focus();
+            return;
+        }
+
+        // Obtener valores del formulario
+        const email = document.getElementById('txtEmail').value.trim();
+        const password = document.getElementById('idPassword').value.trim();
+
+        // Validar credenciales con mensajes específicos
+        if (email !== VALID_EMAIL) {
+            showError('Correo electrónico incorrecto');
+            document.getElementById('txtEmail').classList.add('is-invalid');
+            document.getElementById('txtEmail').focus();
+            return;
+        }
+
+        if (password !== VALID_PASSWORD) {
+            showError('Contraseña incorrecta');
+            document.getElementById('idPassword').classList.add('is-invalid');
+            document.getElementById('idPassword').focus();
+            return;
+        }
+
+        // Si todo es correcto, iniciar sesión
+        sessionStorage.setItem('isLoggedIn', 'true');
+        window.location.href = 'Tienda.html';
     });
 
-    myModal.show(); // Se muestra el modal
-    document.getElementById('txtEmail').focus();
+    // Evento para limpiar errores al editar los campos
+    document.getElementById('txtEmail').addEventListener('input', clearErrors);
+    document.getElementById('idPassword').addEventListener('input', clearErrors);
 
-    // ocultar el contenedor que muestra el mensaje de datos incorrectos
-    let divContend = document.getElementsByClassName('alert alert-danger')[0];
-    divContend.style.display = 'none';
-});
+    // Verificar si el usuario ya está autenticado
+    document.addEventListener("DOMContentLoaded", function () {
+        if (sessionStorage.getItem('isLoggedIn') === 'true') {
+            window.location.href = "Tienda.html";
+        }
 
-
-
+        // Enfocar el campo de email al cargar
+        document.getElementById('txtEmail').focus();
+    });
+})();
